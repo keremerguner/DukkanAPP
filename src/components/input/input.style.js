@@ -2,15 +2,17 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
     container: {
-        padding:10,
-        margin:10,
-        backgroundColor:'white',
-        borderRadius:5
+        padding: 8,
+        margin: 10,
+        backgroundColor: 'white',
+        borderRadius: 5,
+        flexDirection: 'row'
     },
-    logo_container: {
-
+    input: {
+        flex: 1,
     },
-    body_container: {
-
+    icon: {
+        justifyContent: 'center',
+        alignSelf: 'center'
     }
 })
