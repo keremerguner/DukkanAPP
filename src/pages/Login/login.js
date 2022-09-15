@@ -17,9 +17,9 @@ const Login = () => {
             <View style={styles.logo_container}>
                 <Image style={styles.logo} source={require('../../assets/login-logo.png')} />
             </View>
-                {/* <Text>
+                <Text>
                     <AntDesign name='book' style={{ color: 'red', fontSize: 20 }} />
-                </Text> */}
+                </Text>
             <Formik
                 initialValues={{ username: '', password: '' }}
                 onSubmit={handleLogin}
