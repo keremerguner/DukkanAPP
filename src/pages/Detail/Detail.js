@@ -25,7 +25,7 @@ const Detail = ({ route }) => {
             <ScrollView>
                 <Image source={{ uri: data.image }} style={styles.image} />
                 <View style={styles.body_container}>
-                    <Text style={styles.title}>{data.title}</Text>
+                    <Text style={styles.title}>{data.title}</Text> 
                     <Text style={styles.description}>{data.description}</Text>
                     <Text style={styles.price}>{data.price} TL</Text>
                 </View>
