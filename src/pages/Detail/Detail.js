@@ -8,7 +8,7 @@ import Error from "../../Error";
 const Detail = ({ route }) => {
 
     const { id } = route.params;
-    const { loading, data, error } = useFetch(`${Config.API_URL}/${id}`)
+    const { loading, data, error } = useFetch(`${Config.API_PRODUCT_URL}/${id}`)
 
 
     if (loading) {
