@@ -1,15 +1,17 @@
 import React from "react";
-import { SafeAreaView, View, Image, Text, Alert } from 'react-native'
+import { SafeAreaView, View, Image, Alert } from 'react-native'
 import Input from "../../components/input";
 import Button from "../../components/Button";
 import styles from './login.style'
 import { Formik } from "formik";
 import usePost from "../../hooks/usePost";
 import Config from "react-native-config";
+import { useDispatch } from "react-redux";
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
 
     const { data, loading, error, post } = usePost();
+    const dispatch = useDispatch();
 
 
     function handleLogin(values) {
@@ -28,9 +30,12 @@ const Login = ({navigation}) => {
         if (data.status === 'Error') {
             Alert.alert('Dükkan', 'Kullanıcı Bulunamadı')
         }
-        console.log('data: ', data)
-        navigation.navigate('ProductPage')
+        else {
+            dispatch({type: 'SET_USER', payload: {user}})
+            console.log('data: ', data)
+        }
     }
+
 
     return (
         <SafeAreaView style={styles.container}>
@@ -66,3 +71,28 @@ const Login = ({navigation}) => {
 }
 
 export default Login;
+
+const user = {
+    
+        "address": {
+        "geolocation": {
+        "lat": "-37.3159",
+        "long": "81.1496"
+        },
+        "city": "kilcoole",
+        "street": "new road",
+        "number": 7682,
+        "zipcode": "12926-3874"
+        },
+        "id": 1,
+        "email": "john@gmail.com",
+        "username": "johnd",
+        "password": "m38rmF$",
+        "name": {
+        "firstname": "john",
+        "lastname": "doe"
+        },
+        "phone": "1-570-236-7033",
+        "__v": 0
+        
+}
