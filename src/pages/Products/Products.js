@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { SafeAreaView, Text, View, FlatList, ActivityIndicator } from 'react-native'
+import React from "react";
+import { SafeAreaView, FlatList } from 'react-native'
 import Config from "react-native-config";
-import axios from "axios";
 import ProductCard from "../../components/ProductCard";
 import useFetch from "../../hooks/useFetch/useFetch";
 import Loading from "../../Loading";
 import Error from "../../Error";
+import { useDispatch } from "react-redux";
 
 
 const Products = (props) => {
 
+    const dispatch = useDispatch();
+
     const { loading, data, error } = useFetch(Config.API_PRODUCT_URL)
 
     const handleProductSelect = id => {
-        props.navigation.navigate('DetailPage',{id})
-    }    
-    const renderProduct = ({item}) =>
+        props.navigation.navigate('DetailPage', { id })
+    }
+    const renderProduct = ({ item }) =>
     (
         <ProductCard product={item} onSelect={() => handleProductSelect(item.id)} />
     );
@@ -31,7 +33,6 @@ const Products = (props) => {
 
     return (
         <SafeAreaView>
-
             <FlatList data={data} renderItem={renderProduct} />
 
         </SafeAreaView>

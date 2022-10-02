@@ -8,7 +8,7 @@ import usePost from "../../hooks/usePost";
 import Config from "react-native-config";
 import { useDispatch } from "react-redux";
 
-const Login = ({ navigation }) => {
+const Login = () => {
 
     const { data, loading, error, post } = usePost();
     const dispatch = useDispatch();
