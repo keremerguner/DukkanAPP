@@ -16,7 +16,7 @@ const Login = () => {
 
     function handleLogin(values) {
         console.log('values: ', values)
-        post(Config.API_AUTH_URL + '/login', values)
+        post('https://fakestoreapi.com/auth/login', values)
 
     }
 

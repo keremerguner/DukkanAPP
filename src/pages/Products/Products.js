@@ -12,7 +12,7 @@ const Products = (props) => {
 
     const dispatch = useDispatch();
 
-    const { loading, data, error } = useFetch(Config.API_PRODUCT_URL)
+    const { loading, data, error } = useFetch('https://fakestoreapi.com/products')
 
     const handleProductSelect = id => {
         props.navigation.navigate('DetailPage', { id })
